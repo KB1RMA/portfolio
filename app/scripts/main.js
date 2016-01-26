@@ -1,4 +1,4 @@
-;(function ($, window, undefined) {
+(function ($) {
   'use strict';
 
   // Init on DOM ready
@@ -29,4 +29,4 @@
 
   });
 
-}(jQuery, window));
+}(window.jQuery));

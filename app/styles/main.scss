@@ -1,5 +1,5 @@
 $icon-font-path: '../fonts/';
-$fa-font-path:   '//netdna.bootstrapcdn.com/font-awesome/4.5.0/fonts' !default; // for referencing Bootstrap CDN font files directly
+$fa-font-path:   'https://netdna.bootstrapcdn.com/font-awesome/4.5.0/fonts' !default; // for referencing Bootstrap CDN font files directly
 
 //== Typography
 //
@@ -17,9 +17,9 @@ $font-family-base:        $font-family-sans-serif !default;
 @import "bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 
-@import "/bower_components/unslider/dist/css/unslider.css";
-@import "/bower_components/unslider/dist/css/unslider-dots.css";
-@import "/bower_components/zoom.js/css/zoom.css";
+@import "bower_components/unslider/dist/css/unslider";
+@import "bower_components/unslider/dist/css/unslider-dots";
+@import "bower_components/zoom.js/css/zoom";
 
 
 

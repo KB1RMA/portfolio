@@ -62,7 +62,7 @@ gulp.task('html', ['styles', 'scripts'], () => {
 
 gulp.task('images', () => {
   return gulp.src('app/images/**/*')
-    .pipe($.if($.if.isFile, $.cache($.imagemin({
+    .pipe($.cache($.imagemin({
       progressive: true,
       interlaced: true,
       // don't remove IDs from SVGs, they are often used
@@ -72,7 +72,7 @@ gulp.task('images', () => {
     .on('error', function (err) {
       console.log(err);
       this.end();
-    })))
+    }))
     .pipe(gulp.dest('dist/images'));
 });
 
