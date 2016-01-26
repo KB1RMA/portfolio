@@ -7,7 +7,8 @@
     "font-awesome": "fontawesome#~4.5.0",
     "sticky-kit": "~1.1.2",
     "unslider": "~2.0.3",
-    "zoom.js": "teomaragakis/zoom.js#1028f0d268c81cca41fa7d771dc13516a8a2b982"
+    "zoom.js": "teomaragakis/zoom.js#1028f0d268c81cca41fa7d771dc13516a8a2b982",
+    "imagesloaded": "~4.1.0"
   },
   "overrides": {
     "bootstrap-sass": {

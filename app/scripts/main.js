@@ -13,13 +13,18 @@
     //
     // https://github.com/idiot/unslider
 
-    $('.slider').unslider({
-      animateHeight: true,
-      arrows: {
-        //  Unslider default behaviour
-        prev: '<a class="slide-arrow prev"></a>',
-        next: '<a class="slide-arrow next"></a>'
-      }
+    // Wrap in images loaded as unslider seems to have a little bit of
+    //  trouble resizing the slider height unless they're loaded.
+
+    $('.portfolio-item').imagesLoaded(function () {
+      $('.slider').unslider({
+        animateHeight: true,
+        arrows: {
+          //  Unslider default behaviour
+          prev: '<a class="slide-arrow prev"></a>',
+          next: '<a class="slide-arrow next"></a>'
+        }
+      });
     });
 
   });
