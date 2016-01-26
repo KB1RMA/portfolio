@@ -184,6 +184,12 @@ hr {
 
 // Slider styles
 
+.slider {
+  & > ul {
+    list-style: none;
+  }
+}
+
 .slider,
 .unslider {
   position: relative;
@@ -192,15 +198,15 @@ hr {
   // Style the slider forward/back arrows
 
   .slide-arrow {
-    @include chevron (2px, 80px, 6px, #000);
+    @include chevron (2px, 120px, 8px, #000);
     display: inline-block;
     position: absolute;
     top: 50%;
-    margin-top: -50px;
+    margin-top: -80px;
     transition: transform .2s;
     cursor: pointer;
     &.prev {
-      right: -30px;
+      right: -15px;
       &:hover,
       &:focus {
         transform: translateX(4px);
@@ -208,7 +214,7 @@ hr {
     }
     &.next {
       transform: rotate(180deg);
-      left: -30px;
+      left: -15px;
       right: initial;
       &:hover,
       &:focus {
