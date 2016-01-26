@@ -1,0 +1,25 @@
+{
+  "name": "resume",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "~3.3.5",
+    "modernizr": "~2.8.1",
+    "font-awesome": "fontawesome#~4.5.0",
+    "sticky-kit": "~1.1.2",
+    "unslider": "~2.0.3",
+    "zoom.js": "teomaragakis/zoom.js#1028f0d268c81cca41fa7d771dc13516a8a2b982"
+  },
+  "overrides": {
+    "bootstrap-sass": {
+      "main": [
+        "assets/stylesheets/_bootstrap.scss",
+        "assets/fonts/bootstrap/*",
+        "assets/javascripts/bootstrap.js"
+      ]
+    }
+  },
+  "devDependencies": {
+    "chai": "~3.4.2",
+    "mocha": "~2.3.4"
+  }
+}

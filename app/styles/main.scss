@@ -1,0 +1,247 @@
+$icon-font-path: '../fonts/';
+$fa-font-path:   '//netdna.bootstrapcdn.com/font-awesome/4.5.0/fonts' !default; // for referencing Bootstrap CDN font files directly
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  'Lato', sans-serif;
+$font-family-serif:       'Roboto Slab', serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base:        $font-family-sans-serif !default;
+
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/font-awesome/scss/font-awesome.scss";
+// endbower
+
+@import "/bower_components/unslider/dist/css/unslider.css";
+@import "/bower_components/unslider/dist/css/unslider-dots.css";
+@import "/bower_components/zoom.js/css/zoom.css";
+
+
+
+// Chevron Mixin
+
+@mixin chevron ($width, $height, $point-width, $background) {
+  margin: 0 $point-width;
+  width: $width - (2*$point-width);
+  height: $height;
+  background-color: $background;
+  position: relative;
+  &:before {
+    content: ' ';
+    width: 0; height: 0;
+    border-left: $point-width solid transparent;
+    border-top: $height/2 solid $background;
+    border-bottom: $height/2 solid $background;
+    position: absolute;
+    left: $point-width*-1;
+  }
+  &:after {
+    content: '';
+    width: 0;
+    position: absolute;
+    right: $point-width*-1;
+    border-left: $point-width solid $background;
+    border-top: $height/2 solid transparent;
+    border-bottom: $height/2 solid transparent;
+  }
+}
+
+// Out of date browser warning
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+// Styling from resume
+
+.resume {
+  h1 {
+    letter-spacing: 0;
+    margin-top: 0;
+    font-family: 'Roboto Slab', serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  h2 {
+    letter-spacing:0;
+    text-transform:uppercase;
+    font-size: 23px;
+    font-style: italic;
+    font-weight: normal;
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin: 0;
+  }
+
+}
+
+hr {
+  display: block;
+  position: relative;
+  padding: 0;
+  margin: 30px auto;
+  width: 100%;
+  clear: both;
+  border: none;
+  border-top: 1px solid #cccccc;
+  font-size: 1px;
+  line-height: 0;
+  overflow: visible;
+  page-break-after: avoid;
+}
+
+
+// Items
+
+.portfolio-item {
+  @include make-sm-column(12);
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  &.first {
+    margin-top: 0;
+  }
+
+  header {
+    @include make-sm-column(4);
+    padding-top: 20px;
+    .title {
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-weight: 700;
+      display: inline-block;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    .link {
+      @extend .btn;
+      @extend .btn-default;
+      @extend .btn-sm;
+      float: right;
+    }
+  }
+
+  .portfolio-images {
+    @include make-sm-column(8);
+  }
+}
+
+
+// Item images
+
+.portfolio-images {
+  .img-contain {
+    @include make-xs-column(6);
+  }
+
+  img {
+    @include img-responsive();
+  }
+
+  .first {
+    display: block;
+    margin-left: -17px;
+    margin-right: -17px;
+  }
+}
+
+
+// Slider styles
+
+.slider,
+.unslider {
+  position: relative;
+  overflow: visible;
+
+  // Style the slider forward/back arrows
+
+  .slide-arrow {
+    @include chevron (2px, 80px, 6px, #000);
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    transition: transform .2s;
+    cursor: pointer;
+    &.prev {
+      right: -30px;
+      &:hover,
+      &:focus {
+        transform: translateX(4px);
+      }
+    }
+    &.next {
+      transform: rotate(180deg);
+      left: -30px;
+      right: initial;
+      &:hover,
+      &:focus {
+        transform: rotate(180deg) translateX(4px);
+      }
+    }
+  }
+
+  // Style the button navigation
+  .unslider-nav {
+    ol {
+      li {
+        border: 1px solid rgb(0, 0, 0);
+        background-color: transparent;
+        width: 10px;
+        height: 10px;
+        transition: background .5s;
+
+        &.unslider-active {
+          background-color: #000;
+        }
+      }
+    }
+  }
+
+}
+
+.footer {
+  text-align: center;
+  font-size: .8em;
+}
+
+
+// Stop hiding overflow when the Zoom.JS "modal" is open
+.zoom-overlay-open {
+  .slider,
+  .unslider {
+    overflow: visible !important;
+
+    .unslider-wrap {
+      li {
+        opacity: 0;
+        &.unslider-active {
+          opacity: 1;
+        }
+      }
+    }
+
+  }
+}
+
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: $screen-sm-min) {
+  .resume {
+  }
+}
