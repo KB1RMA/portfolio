@@ -4,19 +4,18 @@
   // Init on DOM ready
   $(function () {
 
-    // Init
-
-    $('.header-inner').stick_in_parent();
-
-
-    // Init Unslider
-    //
-    // https://github.com/idiot/unslider
-
-    // Wrap in images loaded as unslider seems to have a little bit of
-    //  trouble resizing the slider height unless they're loaded.
+    // Wrap in images loaded as these are dependant on the height of containers
+    // which is determined by the image dimensions
 
     $('.portfolio-item').imagesLoaded(function () {
+
+      // Init sticky-kit
+      $('.header-fixed').stick_in_parent();
+
+      // Init Unslider
+      //
+      // https://github.com/idiot/unslider
+
       $('.slider').unslider({
         animateHeight: true,
         arrows: {
@@ -25,6 +24,7 @@
           next: '<a class="slide-arrow next"></a>'
         }
       });
+
     });
 
   });

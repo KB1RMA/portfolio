@@ -119,7 +119,9 @@ hr {
 
   header {
     @include make-sm-column(4);
-    padding-top: 20px;
+    .header-fixed {
+      padding-top: 20px;
+    }
     .title {
       font-family: 'Open Sans Condensed', sans-serif;
       font-weight: 700;
@@ -138,6 +140,26 @@ hr {
   .portfolio-images {
     @include make-sm-column(8);
   }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+  .portfolio-item {
+    display: table;
+    height: 100%;
+    table-layout: fixed;
+    word-wrap: break-word;
+    -moz-box-sizing: border-box;
+    header {
+      display: table-cell;
+      height: 100%;
+      vertical-align: top;
+    }
+    .portfolio-images {
+      display: table-cell;
+      height: 100%;
+    }
+  }
+
 }
 
 
