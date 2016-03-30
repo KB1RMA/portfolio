@@ -1,6 +1,6 @@
 # My Portfolio
 
-Visible on github pages here: [https://kb1rma.github.io/portfolio/](Here) 
+Visible on github pages here: [https://kb1rma.github.io/portfolio/](https://kb1rma.github.io/portfolio/) 
 
 
 ## Instructions
